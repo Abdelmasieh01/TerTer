@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+#post{
+  display: flex;
+  margin-bottom: 20px;
+}
+#post #id_text{
+  margin: 0px;
+  border: 0px;
+  width: 80%;
+  height: 30px;
+}
+#post button{
+  width: 50px;
+  height: 20px;
+}
+
+
+
+
+.img-comment{
+      height: 17%;
+      width: 4%;
+      margin: 0;
+      margin-right: 10px;
+}
+
+.icon {
+      margin-top: 3%;
+      color: white;
+      height: 70%;
+      margin-left: 5%;
+      font-size: 25px;
+      position: fixed;
+}
+.main {
+  color: white;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-bottom: solid 5px rgb(182, 199, 182);
+  margin-top: 5px;
+}
+
+.fa-solid,
+.fa-brands {
+  margin-top: 10px;
+  height: 40px;
+}
+
+img {
+      width: 50px;
+      border-radius: 50%;
+      margin-top: 100px;
+      margin-left: 10px;
+}
+
+
+.btn {
+  background-color: black;
+  color: white;
+  width: 61%;
+}
+.btn:hover {
+  background-color: gray;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 10%;
+}
+
+.tweet {
+  height: 40px;
+  background-color: rgb(57, 57, 223);
+  border-radius: 60%;
+  margin-left: 30px;
+    width: 60%;
+  text-align: center;
+  justify-content: center;
+}
+button{
+  height: 40px;
+  background-color: rgb(57, 57, 223);
+  border-radius: 10%;
+  margin-left: 10px;
+  width: 25%;
+  text-align: center;
+  justify-content: center;
+      margin-bottom: 10px;
+}
+.tweet:hover {
+  background-color: rgb(54, 20, 206);
+  cursor: pointer;
+  height: 30px;
+  border-radius: 10%;
+}
+button:hover{
+  background-color: rgb(54, 20, 206);
+  cursor: pointer;
+}
+.user {
+  position: relative !important;
+  bottom: 50px !important;
+  left: 60px !important;
+}
+
+.tweet-date {
+  position: relative !important;
+  bottom: 50px !important;
+  left: 60px !important;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.usr {
+  position: relative !important;
+  bottom: 50px !important;
+  left: 60px !important;
+
+  color: gray;
+  font-size: 12px;
+}
+.fa-ellipsis {
+  margin-left: 20px;
+}
+
+.img {
+  margin: 0;
+}
+  
+input {
+  background-color: black;
+  /* width: 150%; */
+  border: none;
+  color: white;
+  margin-left: 10px;
+  margin-top: 80px;
+  height: 52px;
+  width: 235%;
+}
+
+.post div {
+  display: flex;
+
+  position: relative;
+  bottom: 30%;
+}
+.fa-star {
+  position: relative;
+  bottom: 30%;
+  left: 95%;
+}
+
+.tweets {
+  color: white;
+  border-bottom: 3px gray solid;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.email {
+  color: gray;
+}
+
+.myposts {
+  position: relative;
+  bottom: 10px;
+}
+
+a {
+  color: cornflowerblue;
+}
+
+.fa-comment {
+  margin-left: 20%;
+}
+
+.fa-solid:hover{
+    cursor: pointer;
+}
+.left {
+  width: 100%;
+}
+
+.search {
+  width: 80%;
+  height: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5px;
+  background-color: rgb(51, 49, 49);
+}
+.news {
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 10px;
+
+  background-color: rgb(51, 49, 49);
+}
+.what-happening {
+  color: white;
+  text-align: center;
+  border-top: 20px black solid;
+  margin-bottom: 20px;
+}
+
+.tending {
+  color: gray;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.trends {
+  margin-left: 20px;
+  color: white;
+}
+
+.follow {
+  color: white;
+  margin-left: 9%;
+  margin-right: 9%;
+  border-radius: 10px;
+  background-color: rgb(51, 49, 49);
+  border-top: 20px black solid;
+}
+
+.txt {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color: white;
+}
+
+.suggest {
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow-button {
+  width: 70px;
+  height: 30px;
+  background-color: rgb(98, 98, 228);
+  margin-right: 20px;
+}
+
+.follow-button:hover {
+  background-color: rgb(66, 66, 75);
+  cursor: pointer;
+}
+
+
+.zz {
+  color: gray;
+  position: relative;
+  right: 25%;
+  top: 25px;
+}
+
+.usama{
+  height: 50px;
+  width: 50px;
+  margin-top: 12%; 
+}
+
+img:hover{
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+input#id_img {
+  height: 0px;
+  width: 0px;
+}
+
+#img-upload-label {
+  height: 15px;
+  width: 15px;
+}
+
+.fa-image {
+  height: 15px;
+  width: 15px;
+}
+
+.img-post{
+  border-radius: 0px;
+  width: 90%;
+  margin-right: 5%;
+  margin-top: 0px;
+}
+
+a:hover{
+  color: rgb(145, 145, 224);
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: rgb(145, 145, 224);
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(145, 145, 224);
+}

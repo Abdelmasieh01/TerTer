@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    border: 0px;
+}
+body{
+    background-color: black;
+    color: white;
+}
+
+form{
+    margin-left: 38%;
+    
+}
+
+input{
+    display: block;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 160%;
+}
+
+button{
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 21%;
+    height: 30px;
+    background-color: rgb(99, 61, 172);
+    font-size: 150%;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(122, 122, 235);
+}
+button > p{
+    color: aliceblue;
+}
+
+.fa-twitter{
+    margin-left: 46%;
+    font-size: 700%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    color:rgb(139, 139, 236);
+}

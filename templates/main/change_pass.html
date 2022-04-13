@@ -1,0 +1,18 @@
+{% extends 'index.html '%}
+
+{% block title %}
+<title>Change Password</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/change_pass.css" />
+{% endblock %}
+
+{% block content %}
+<i class="fa-brands fa-twitter"></i>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit"><p>Change</p></button>
+</form>
+{% endblock %}

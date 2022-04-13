@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    border: 0px;
+}
+
+body{
+    background-color: black;
+}
+
+div{
+    color: white;
+    margin-left: 40%;
+    
+}
+a{
+    display: block;
+    margin-left: 4%;
+    margin-top: 2%;
+    background-color: rgb(145, 145, 241);
+    width: 20%;
+    height: 50px;
+    text-align: center;
+    
+    font-size: 25px;
+    border-radius: 10px;
+}
+a:hover{
+    cursor: pointer;
+    background-color: rgb(97, 97, 236);
+}
+
+.fa-twitter{
+    color: rgb(99, 99, 240);
+    font-size: 750%;
+    margin-bottom: 10%;
+    margin-top: 20%;
+    margin-left: 7%;
+}
+
+p{
+    position: relative;
+    top: 8px;
+}
+
+h1{
+    margin-right: 5%;
+}

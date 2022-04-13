@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/profile.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>{{ profile.user.username }}</title>
+
+    {% block script %}
+    <script src="/static/js/socket.js"></script>
+    {% endblock %}
+    
+  </head>
+  <body>
+    <aside class="left-side"></aside>
+    <main>
+      <img class="cover" src="/static/images/cover.png" alt="cover photo" />
+      <div class="user-action">
+        <img class="profile" src="/media/{{ profile.pp }}" alt="profile picture" />
+
+        <h1>{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
+        <h2>@{{ profile.user.username }}</h2>
+        {% if not mine %}
+        <div class="buttons">
+
+          {% if not followed %}
+          <button class="follow" 
+          onclick="location.href='/profile/{{ profile.user.username }}/follow/';">follow</button>
+          {% elif followed %}
+          <button class="unfollow"
+          onclick="location.href='/profile/{{ profile.user.username }}/follow/';">unfollow</button>
+          {% endif %}
+
+        </div>
+        {% endif %}
+      </div>
+
+      {% if tweets %}
+      {% for tweet in tweets %}
+      <div class="tweets">
+        <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+          <img class="img" src="/media/{{ profile.pp }}" alt="{{ profile.user.username }}" />
+        </a>
+        <p class="user new-post">
+          <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+            {{ tweet.user.user.first_name }} {{ tweet.user.user.last_name }}
+          </a>
+          <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+            <span class="email">@{{ tweet.user.user.username }}</span>
+          </a>
+        </p>
+        <a href="{% url 'tweets:tweet' tweet.id %}"><p class="tweet-date">
+          {{ tweet.date }}
+        </p></a>
+
+        <p class="myposts">{{ tweet.tweet }}</p>
+        {% if tweet.img %}
+        <img class="img-post" src="/media/{{ tweet.img }}" alt="post image">
+        {% endif %}
+        
+        <div class="react">
+          <i class="fa-solid fa-heart"
+          onclick="like('{{ tweet.id }}')" id="react{{ tweet.id }}">    {{ tweet.get_likes }}</i>
+          <i class="fa-solid fa-comment">    {{ tweet.get_comments }}</i>
+        </div>
+
+        <form method="POST" id="post">
+          {% csrf_token %}
+          <input type="hidden" name="tweet-id" value="{{ tweet.id }}">
+          {{ form.text }}
+          <button class="post-comment" type="submit">Post</button>
+        </form>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </main>
+
+    <aside class="right-side"></aside>
+  </body>
+</html>

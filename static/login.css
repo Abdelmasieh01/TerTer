@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin: 5% 20% 10px 38%;
+    width: 350px;
+    height: 20px;
+    border-radius: 10px; 
+}
+
+#id_password{
+    margin-top: 0px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    background-color: rgb(138, 138, 229);
+    margin: 1% 2% 10px 48%;
+    border-radius: 10px;
+}
+
+button:hover{
+background-color: rgb(70, 70, 233);
+}
+
+.fa-twitter{
+    color: rgb(138, 138, 229);
+    font-size: 100px;
+    margin-left: 48%;
+    margin-top: 10%;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block style %}
+    <link rel="stylesheet" href="/static/index.css" />
+    {% endblock %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+
+    {% block title %}
+    <title>TerTer</title>
+    {% endblock %}
+
+    {% block script %}
+    <script src="/static/js/socket.js"></script>
+    {% endblock %}
+
+  </head>
+
+  {% block content %}
+  {% if user.is_authenticated %}
+  <body>
+    {% block sidebar %}
+    <aside>
+      <div class="icon">
+        <ul>
+          <li><i class="fa-brands fa-twitter"></i></li>
+          <li>
+            <i class="fa-solid fa-house"></i> <button class="btn">Home</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-hashtag"></i>
+            <button class="btn">Explore</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-bell"></i>
+            <button class="btn">Notification</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <button class="btn">Messages</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-bookmark"></i>
+            <button class="btn">Bookmarks</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-user"></i>
+            <button class="btn">Profile</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-angles-right"></i>
+            <button class="btn">More</button>
+          </li>
+        </ul>
+        <div><button class="btn tweet">tweet</button></div>
+
+        <div class="main">
+          <div>
+            <img src="/media/{{ profile.pp }}"   />
+            <p class="user">{{ profile.user.first_name }} {{ profile.user.last_name }}</p>
+            <p class="usr">@{{ profile.user.username }}</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    {% endblock %}
+
+    <main>
+      <div class="post">
+        <h1>Home</h1>
+        {% if user.is_authenticated %}
+        <div class="new">
+          <img class="img usama" src="/media/{{ profile.pp }}"/>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.text }} 
+              <label id="img-upload-label" for="id_img">
+                <i class="fa-solid fa-image fa-xl"></i>
+              </label>
+              {{ form.img }}
+            <button type="submit" name="post">Post</button>
+          </form>
+        </div>
+        {% endif %}
+
+      </div>
+
+      {% if tweets %}
+      {% for tweet in tweets %}
+      <div class="tweets">
+        <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+          <img class="img" src="/media/{{ tweet.user.pp }}"/>
+        </a>
+        <p class="user new-post">
+          <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+            {{ tweet.user.user.first_name }} {{ tweet.user.user.last_name }}
+          </a>
+          <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+            <span class="email">@{{ tweet.user.user.username }}</span>
+          </a>
+        </p>
+        
+        <a href="{% url 'tweets:tweet' tweet.id %}"><p class="tweet-date">
+          {{ tweet.date }}
+        </p></a>
+        <p class="myposts">
+          {{ tweet.tweet }}
+        </p>
+        {% if tweet.img %}
+        <img class="img-post" src="/media/{{ tweet.img }}" alt="post image">
+        {% endif %}
+        <div class="react">
+          <i class="fa-solid fa-heart"  
+          onclick="like('{{ tweet.id }}')" id="react{{ tweet.id }}">    {{ tweet.get_likes }}</i>
+          <i class="fa-solid fa-comment">    {{ tweet.get_comments }}</i>
+        </div>
+        <form method="POST" enctype="multipart/form-data" id="post">
+          {% csrf_token %}
+          <input type="hidden" name="tweet-id" value="{{ tweet.id }}">
+          {{ comment_form }}
+          <button type="submit" name="comment">Post</button>
+        </form>
+      </div>
+      {% endfor %}
+      {% endif %}
+      
+      </div>
+    </main>
+  </body>
+  {% endif %}
+
+  {% endblock %}
+
+</html>

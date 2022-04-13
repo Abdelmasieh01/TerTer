@@ -1,0 +1,240 @@
+*{
+    margin: 0px;
+    border: 0px;
+}
+
+body{
+    background-color: black;
+}
+
+.left-side{
+    width: 25%;
+    background-color: black;
+}
+.right-side {
+    width: 25%;
+    background-color: black;
+}
+
+main{
+    width: 50%;
+    background-color: black;
+}
+
+.cover{
+    width: 100%;
+}
+
+.profile {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+h1{
+    margin-left: 25%;
+    margin-top: -15%;
+    color: white;
+}
+
+h2{
+    margin-left: 25%;
+    margin-top: 0.5%;
+    color: white;
+}
+
+
+main{
+    margin-left: 25%;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 23%;
+}
+button{
+    display: block;
+    color: white;
+    width: 140px;
+    height: 50px;
+    border-radius: 10%;    
+    margin-left: 1%;
+}
+
+
+.post-comment {
+    width: 8%;
+    height: 15%;
+    background-color: rgb(79, 46, 224);
+    margin-top: 3.2%;
+}
+.post-comment:hover{
+    background-color: rgb(54, 20, 206);
+    cursor: pointer;
+}
+
+form{
+    margin-top: 5%;
+    display: flex;
+}
+
+.follow{
+    background-color: rgb(72, 72, 228);
+}
+.follow:hover{
+    background-color: rgb(131, 131, 226);
+    cursor: pointer;
+}
+
+.unfollow{
+    background-color: rgb(86, 86, 88);
+}
+.unfollow:hover {
+    background-color: rgb(193, 193, 219);
+    cursor: pointer;
+}
+
+.block{
+    background-color: rgb(112, 5, 5);
+    
+}
+.block:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.img{
+    border-radius: 50%;
+    width: 7%;
+    height: 7%;
+}
+
+.img-comment{
+    color: white;
+    border-bottom: 3px gray solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 5%;
+}
+
+input{
+    margin-top: 2%;
+    border: 0px;
+    width: 80%;
+    height: 30px;
+    background-color: black;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.user{
+    position: relative;
+    bottom: 45px;
+    left: 55px;
+}
+span{
+    color: gray;
+}
+
+.tweets{
+    color: white;
+    border-bottom: 3px gray solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.user-action{
+    position: relative;
+    bottom: 70px;
+}
+
+.img-post{
+    border-radius: 0px;
+    width: 90%;
+    margin-right: 5%;
+    margin-top: 5px;
+}
+
+.tweet-date {
+    position: relative !important;
+    bottom: 45px !important;
+    left: 8% !important;
+    font-size: 90%;
+    margin-top: 0.5%;
+}
+
+a:hover{
+    color: rgb(145, 145, 224);
+    text-decoration: none;
+}
+  
+a:link {
+    text-decoration: none;
+    color: rgb(145, 145, 224);
+}
+  
+a:visited {
+    color: rgb(145, 145, 224);
+    text-decoration: none;    
+}
+
+.fa-solid,
+.fa-brands {
+  margin-top: 10px;
+  font-size: 100%;
+}
+
+.fa-comment {
+    margin-left: 20%;
+}
+  
+.fa-solid:hover{
+    cursor: pointer;
+}
+
+/*CSS for form*/
+
+input#id_img {
+    height: 0px;
+    width: 0px;
+}
+  
+#img-upload-label {
+    height: 15px;
+    width: 15px;
+}
+  
+.fa-image {
+    height: 15px;
+    width: 15px;
+}
+  
+.img-post{
+    border-radius: 0px;
+    width: 90%;
+    margin-right: 5%;
+    margin-top: 0px;
+}
+  
+.img {
+    margin: 0;
+}
+
+.usama{
+    height: 50px;
+    width: 50px;
+    margin-top: 12%; 
+}
+
+
+
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}

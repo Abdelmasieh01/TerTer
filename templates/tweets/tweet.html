@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/tweet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <title>Tweet by: {{ tweet.user.user.username }}</title>
+
+    {% block script %}
+    <script src="/static/js/socket.js"></script>
+    {% endblock %}
+    
+  </head>
+
+  <body>
+    <aside>
+      
+    </aside>
+
+    <main>
+      
+    </div>
+  </div>
+  
+<!--Comment Form-->
+
+      <div class="tweets">
+        
+        <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+        <img class="img" src="/media/{{ tweet.user.pp }}" alt="{{ tweet.user.user.username }}" />
+        </a>
+        
+        <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+        <p class="user new-post">
+          {{ tweet.user.user.first_name }} {{ tweet.user.user.last_name }}
+          <a href="{% url 'tweets:profile' tweet.user.user.username %}">
+          <span class="email">@{{ tweet.user.user.username }}</span>
+          </a>
+        </p>
+        </a>
+        
+        <p class="tweet-date">
+          {{ tweet.date }}
+        </p>
+
+        <p class="myposts">
+          {{ tweet.tweet }}
+        </p>
+        
+        {% if tweet.img %}
+        <img class="img-post" src="/media/{{ tweet.img }}" alt="post image">
+        {% endif %}
+
+        <div class="react">
+          <i class="fa-solid fa-heart"
+          onclick="like('{{ tweet.id }}')" id="react{{ tweet.id }}">    {{ tweet.get_likes }}</i>
+          <i class="fa-solid fa-comment">    {{ tweet.get_comments }}</i>
+        </div>
+        
+        {% if comments %}
+        {% for comment in comments%}
+        <div class="comment">
+          <a href="{% url 'tweets:profile' comment.user.user.username %}">
+            <img class="img-comment img-comment2" src="/media/{{ comment.user.pp }}" alt="{{ comment.user.user.username }}"  />
+          </a>
+        
+        <a href="{% url 'tweets:profile' comment.user.user.username %}">
+        <p class="user-comment new-post">
+          {{ comment.user.user.first_name }} {{ comment.user.user.last_name }}
+          <a href="{% url 'tweets:profile' comment.user.user.username %}">
+          <span class="email">@{{ comment.user.user.username }}</span>
+          </a>
+        </p>
+        </a>
+
+        <p class="comment-date">
+          {{ comment.date }}
+        </p>
+        
+        <p class="mycomment">
+          {{ comment.comment_tweet }}
+        </p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <form method="POST" id="post">
+          {% csrf_token %}
+          <input type="hidden" name="tweet-id" value="{{ tweet.id }}">
+          <img class="img-comment" src="/media/{{ profile.pp }}" alt="{{ tweet.user.user.username }}"  />
+          {{ form.text }}
+          <button type="submit">Post</button>   
+        </form>
+
+      </div>   
+    </main>
+
+  </body>
+</html>

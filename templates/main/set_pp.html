@@ -1,0 +1,11 @@
+{% block title %}
+<title>Set up profile | TerTer</title>
+{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}

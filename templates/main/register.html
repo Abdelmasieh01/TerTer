@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Sign up | TerTer</title>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/sign_up.css" />
+{% endblock %}
+
+{% block content %}
+<i class="fa-brands fa-twitter"></i>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Sign up</button>
+</form>
+{% endblock %}
